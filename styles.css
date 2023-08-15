@@ -1,53 +1,31 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
-  background-color: rgb(0, 0, 0);
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
 }
 
-h1 {
-  font-family: arial;
-  font-size: 3em;
-  text-align: center;
-  margin: 25px;
-  padding: 50px;
-  background-color: rgb(61, 56, 56);
-  color:rgb(0, 0, 0);
-  overflow: hidden;
-}
-
-#flexbox {
+.gallery {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-.column img {
-  vertical-align: middle;
-  margin-top: 8px;
-  
-}
-
-.column:nth-child(even) {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
+/* Adicionando responsividade para telas menores */
 @media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
+  .gallery {
+    flex-direction: column; /* Alterar para uma coluna quando a tela for menor que 600px */
+    align-items: center; /* Centralizar os itens quando estiver em uma coluna */
   }
 }
